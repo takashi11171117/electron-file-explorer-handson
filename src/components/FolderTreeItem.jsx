@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const divStyle = { "list-style": "none" }
 /* フォルダツリーアイテムの描画 */
-const FolderTreeItem = React.createClass({
+const FolderTreeItem = React.Component({
   /* フォルダ展開/折畳イベントのハンドラ */
   onExpandClick: function(fullpath, isExpanded) {
     this.props.onExpandClick(fullpath, isExpanded);
