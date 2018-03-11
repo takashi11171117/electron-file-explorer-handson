@@ -3,17 +3,17 @@ import PropTypes from 'prop-types'
 
 const divStyle = { "list-style": "none" }
 /* フォルダツリーアイテムの描画 */
-const FolderTreeItem = React.Component({
+class FolderTreeItem extends React.Component {
   /* フォルダ展開/折畳イベントのハンドラ */
-  onExpandClick: function(fullpath, isExpanded) {
+  onExpandClick(fullpath, isExpanded) {
     this.props.onExpandClick(fullpath, isExpanded);
-  },
+  }
   /* パスリスト表示イベントのハンドラ */
-  onFolderClick: function(fullpath) {
+  onFolderClick(fullpath) {
     this.props.onFolderClick(fullpath);
-  },
+  }
   /* フォルダツリーアイテムの描画処理 */
-  render : function() {
+  render() {
     let folderTreeItem = this.props.folderTreeItem
     return <div style={divStyle}>
      <li>
@@ -45,7 +45,7 @@ const FolderTreeItem = React.Component({
       </li>
     </div>
   }
-})
+}
 /* フォルダツリーアイテムの型の定義*/
 FolderTreeItem.propTypes = {
   folderTreeItem: PropTypes.object.isRequired,
